@@ -11,7 +11,7 @@ struct Index {
   @State msgFromWatch: string = '';
   receivedLog: string = 'Hi Wear Engine';
   msgToWatch: string = 'Hi, Wear Engine!';
-  filePath: string = this.context?.resourceDir + '/test.txt';
+  filePath: string = `${this.context?.resourceDir}/test.txt`;
 
   private showToastMessage(message: string, duration: number = 1000): void {
     promptAction.openToast({ message, duration });
@@ -45,13 +45,12 @@ struct Index {
     const isInstalled = await this.wearService.isRemoteAppInstalled();
     if (!isInstalled) {
       this.logError('Remote app not installed.', true);
-      return;
     }
 
     await this.wearService.registerReceiver(
       (msg) => {
         this.msgFromWatch = this.wearService.decodeMessage(msg.content);
-        this.receivedLog = 'Successfully received message: ' + this.msgFromWatch;
+        this.receivedLog = `Successfully received message:${this.msgFromWatch}`;
         this.logInfo(`Message received: ${this.msgFromWatch}`, true);
       },
       (file) => {
@@ -70,12 +69,7 @@ struct Index {
 
   async sendMessage(): Promise<void> {
     const result = await this.wearService.sendMessage(this.msgToWatch);
-    if (!result) {
-      this.logError('Failed to send message.', true);
-      return;
-    }
-
-    const toastMsg = `Send result: ${result.code}${result.progress ? ' ' + result.progress : ''}`;
+    const toastMsg = `Send result: ${JSON.stringify(result)}}`;
     this.logInfo(toastMsg, true);
   }
 

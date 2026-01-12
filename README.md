@@ -35,33 +35,57 @@ It enables an Android phone to communicate with a Huawei Smart Next Wearable dev
 
 ```
 HMOS Next Wearable
-├───ets
-│   ├───hiwearmainability
-│   │       HiWearMainAbility.ets
-│   │       
-│   ├───pages
-│   │       Index.ets
+├───main
+│   │   module.json5
+│   │   syscap.json
 │   │
-│   └───Services
-└───resources
-    ├───base
-    │   ├───element
-    │   │       color.json
-    │   │       float.json
-    │   │       string.json
-    │   │
-    │   ├───media
-    │   │       background.png
-    │   │       foreground.png
-    │   │       layered_image.json
-    │   │       startIcon.png
-    │   │
-    │   └───profile
-    │           main_pages.json
-    │
-    ├───rawfile
-    └───resfile
-            test.txt
+│   ├───ets
+│   │   ├───hiwearmainability
+│   │   │       HiWearMainAbility.ets
+│   │   │
+│   │   ├───pages
+│   │   │       Index.ets
+│   │   │
+│   │   └───services
+│   │           WearEngineService.ets
+│   │
+│   └───resources
+│       ├───base
+│       │   ├───element
+│       │   │       color.json
+│       │   │       float.json
+│       │   │       string.json
+│       │   │
+│       │   ├───media
+│       │   │       background.png
+│       │   │       foreground.png
+│       │   │       layered_image.json
+│       │   │       startIcon.png
+│       │   │
+│       │   └───profile
+│       │           main_pages.json
+│       │
+│       ├───dark
+│       │   └───element
+│       │           color.json
+│       │
+│       └───resfile
+│               test.txt
+│
+├───mock
+│       mock-config.json5
+│
+├───ohosTest
+│   │   module.json5
+│   │
+│   └───ets
+│       └───test
+│               Ability.test.ets
+│               List.test.ets
+│
+└───test
+        List.test.ets
+        LocalUnit.test.ets
 ```
 
 
