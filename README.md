@@ -24,7 +24,7 @@ It enables an Android phone to communicate with a Huawei Smart Next Wearable dev
 
 ## Stack
 
-- **Languages**: ArkTS (Huawei LiteWearable)
+- **Languages**: ArkTS (Huawei SportWatch, Lite Wearable)
 - **Tools**: DevEco Studio 5.1.0.849
 - **Libraries**: Wear Engine SDK
    - Huawei P2P Messaging
